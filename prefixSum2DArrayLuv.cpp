@@ -156,7 +156,7 @@ int main()
    
    running a loop for taking query from the user -> 0(q)
    
-   overall complexity -> 0(n^2) + 0(q) ~ 0(n^2) ~ 
+   overall complexity -> 0(n^2) + 0(q) ~ 0(n^2) ~ (10^6 + 10^5) ~ 10 ^6
    */
    
 }
