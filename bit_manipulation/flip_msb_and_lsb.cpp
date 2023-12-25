@@ -17,7 +17,7 @@ int main() {
 	
 	pos--;          //because of 0 based indexing in bitwise representation
 	
-	n=n^(1>>pos);
+	n=n^(1<<pos);
 	
 	
 	cout<<n<<"\n";
