@@ -22,13 +22,13 @@ typedef long long ll;
 
 (output will be according to 1-based indexing)
 
-			   ___________
-			   |		 |
-			   V		 |
+	       ___________
+	       |         |
+	       V         |
 0<---2--->3--->4--->7	 |
-|	^		   |    ^	 |
-|	|		   |    |	 |
-v	|		   v    |	 |
+|   ^	       |    ^	 |
+|   |	       |    |	 |
+v   |	       v    |	 |
 1___| 	       5--->6____| 
 
 
