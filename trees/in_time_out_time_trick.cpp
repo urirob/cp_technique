@@ -255,13 +255,15 @@ void solve(){
 		if
 		
 		in_time[x]<in_time[y]<out_time[y]<out_time[x]
+
+		i.e. node y is completely explored and then x is completely explored
 		
 		*/
 		int x,y;
 		cin>>x>>y;
 		x--,y--;
 		
-		if(in_time[x]<=in_time[y]&&out_time[y]<=out_time[x]){
+		if(in_time[x]<in_time[y]&&out_time[y]<out_time[x]){
 			cout<<"Ancestor exists\n";
 		}
 		
