@@ -168,8 +168,8 @@ ll ncr(ll n,ll r){
 /*
 steps done so far
 
-1) find the first parent of each node	->0(n)
-2) find the level of every node			->0(n)
+1) find the first parent of each node		    ->0(n)
+2) find the level of every node			    ->0(n)
 3) Binary lifting finding 2^kth parent of each node -> 0(nlogn)
 
 Till now it is done for finding kth_parent of a node
@@ -248,9 +248,9 @@ int lca_unoptimised(int a,int b,VL&distance,VVL&parents){
 	else{
 		/*
 		A->x->y->z->w
-					 \
-					  a->p->q->r
-					 /
+			     \
+			      a->p->q->r
+		             /
 		B->s->t->u->v	
 		
 		
@@ -343,7 +343,7 @@ int lca_optimised(int a,int b,VL&distance,VVL&parents){
 			a=parent_a;
 			b=parent_b;
 		}
-		//we have found the last false, and return 2^0th parent of x
+		//we have found the last false, and return 2^0th parent of a
 		
 	}
 	
