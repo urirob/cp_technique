@@ -196,7 +196,7 @@ answer=sum of distances of from given rooted node, to every other node which is 
 
 0(n) idea
 
-let dp[i]=count of sum distance to every other node of the tree, for from rooted at node 'i'
+let dp[i]=count of sum distance to every other node of the tree, from node rooted at 'i'
 
 
 let in[node]=answer(sum of distances of to all other nodes from the each child of "node") for subtree  of "node"
