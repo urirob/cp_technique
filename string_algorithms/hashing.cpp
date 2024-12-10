@@ -92,4 +92,9 @@ struct double_hash{  //create double hash for single string for length=1e5 to av
   pair<int,int> get_reverse_hash(int l,int r){
     return make_pair(h1.get_rev_hash(l,r),h2.get_rev_hash(l,r));
   }
+
+  bool is_palindrome(int l,int r){
+    return (get_f_hash(l,r)==get_rev_hash(l,r));
+  }
+  
 };
