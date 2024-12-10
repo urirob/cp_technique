@@ -1,5 +1,5 @@
 //choose p to be some prime numbers like 29,31,37...
-//and chose mod value to standard (int)(1e9)+7
+//and chose mod value to non-standard like (int)(1e9)+9, (int)(1e9)+21 to avoid any collision for hidden test cases
 
 ll mod_mul(ll a,ll b,ll mod){
   a%=mod;
