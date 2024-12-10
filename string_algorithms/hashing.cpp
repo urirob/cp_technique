@@ -37,22 +37,21 @@ struct hasher{
 
     sz=s.length();
     f_hash.resize(sz);
-
     f_hash[0]=(s[0]-'a'+1);
+
+    rev_hash.resize(sz);
+    rev_hash[sz-1]=(s[0]-'a'+1);
 
     pwr_p.assign(sz,0);
     pwr_p[0]=1;
     for(int i=1;i<s.length();i++){
-      pwr_p[i]=(pwr_p[i-1]*p)%mod;
-      f_hash[i]=(f_hash[i-1]*p + (s[i]-'a'+1))%mod;
+        pwr_p[i]=(pwr_p[i-1]*p)%mod;
+        f_hash[i]=(f_hash[i-1]*p + (s[i]-'a'+1))%mod;
     }
 
-
-    rev_hash.resize(sz);
-      rev_hash[sz-1]=(s[0]-'a'+1);
-      for(int i=s.length()-1;i>=0;i--){
-          rev_hash[i]=(rev_hash[i+1]*p + (s[i]-'a'+1))%mod;
-      }
+    for(int i=s.length()-2;i>=0;i--){
+        rev_hash[i]=(rev_hash[i+1]*p + (s[i]-'a'+1))%mod;
+    }
 
   }
 
