@@ -27,6 +27,8 @@ struct hasher{
   vector<ll>f_hash; //forward-hash or prefix-hash
   vector<ll>pwr_p;  //creating power of p array to avoid use of binpow function (0(logn)) to make the substring hash values in 0(1)
 
+  vector<int>rev_hash; 
+
 
   //preprocessing
   void init(string s,ll _p,ll _mod){
@@ -45,6 +47,13 @@ struct hasher{
       f_hash[i]=(f_hash[i-1]*p + (s[i]-'a'+1))%mod;
     }
 
+
+    rev_hash.resize(sz);
+      rev_hash[sz-1]=(s[0]-'a'+1);
+      for(int i=s.length()-1;i>=0;i--){
+          rev_hash[i]=(rev_hash[i+1]*p + (s[i]-'a'+1))%mod;
+      }
+
   }
 
   //finding substring hash from prefix hash in 0(1)
@@ -58,8 +67,8 @@ struct hasher{
     return ans;
   }
 
-  vector<int>rev_hash; 
-  //resize it init and process it in init function if required
+
+
 
   ll get_rev_hash(int l,int r){
     if(r==sz-1) return rev_hash[l]; if(l>r) return 0;
