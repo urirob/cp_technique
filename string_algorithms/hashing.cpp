@@ -10,6 +10,8 @@ ll mod_mul(ll a,ll b,ll mod){
   return res;
 }
 
+
+//finding hash value for entire string
 ll quick_hash(string s,ll p,ll mod){
   ll ans=s[0]-'a'+1;
   for(int i=1;i<s.length();i++){
@@ -18,6 +20,7 @@ ll quick_hash(string s,ll p,ll mod){
   return ans;
 }
 
+//hashing value for some substring after preprocessing in init function
 struct hasher{
   int sz;
   ll mod,p;
@@ -55,4 +58,30 @@ struct hasher{
     return ans;
   }
 
+  vector<int>rev_hash; 
+  //resize it init and process it in init function if required
+
+  ll get_rev_hash(int l,int r){
+    if(r==sz-1) return rev_hash[l]; if(l>r) return 0;
+    return ((rev_hash[l]-rev_hash[r+1]*pwr_p[r-l+1])%mod+mod)%mod;
+  }
+
+};
+
+
+//31,37,999'999'937,999'999'929
+
+struct double_hash{  //create double hash for single string for length=1e5 to avoid collisions due to same hash value for two different substrings
+  hasher h1,h2;
+  void init(string &s,int _b1=31,int _b2=37,int _m1=999'999'937,int _m2=999'999'929){
+    h1.init(s,_b1,_m1); h2.init(s,_b2,_m2);
+  }
+
+  pair<int,int> get_front_hash(int l,int r){
+    return make_pair(h1.get_f_hash(l,r),h2.get_f_hash(l,r));
+  }
+
+  pair<int,int> get_reverse_hash(int l,int r){
+    return make_pair(h1.get_rev_hash(l,r),h2.get_rev_hash(l,r));
+  }
 };
