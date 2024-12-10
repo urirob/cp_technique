@@ -27,7 +27,7 @@ struct hasher{
   vector<ll>f_hash; //forward-hash or prefix-hash
   vector<ll>pwr_p;  //creating power of p array to avoid use of binpow function (0(logn)) to make the substring hash values in 0(1)
 
-  vector<int>rev_hash; 
+  vector<ll>rev_hash; 
 
 
   //preprocessing
